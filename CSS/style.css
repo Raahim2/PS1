@@ -17,28 +17,58 @@ body {
 
 .container {
     width: 90%; /* 90% of the screen width */
-    max-width: 500px; /* Max width set to 500px */
-    height: 60%; /* 60% of the screen height */
+    max-width: 800px; /* Increased max width for better responsiveness */
+    height: 80%; /* Increased height for better content visibility */
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .header {
     background-color: #D32F2F; /* Strong red */
-    padding: 30px;
+    padding: 20px;
     color: white;
     text-align: center;
     border-bottom: 4px solid #B71C1C; /* Darker red bottom border */
 }
 
-.main-content {
-    padding: 40px 20px;
-    text-align: center;
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.question-section, .note-section {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.question-section h3, .note-section h3 {
+    margin-bottom: 10px;
+}
+
+.metadata {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.metadata p {
+    margin-bottom: 5px;
 }
 
 button {
@@ -50,6 +80,7 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px 0; /* Added margin for better spacing */
 }
 
 button:hover {
@@ -64,4 +95,12 @@ button:hover {
     font-size: 14px;
     color: #666;
     border-top: 2px solid #eee;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        max-width: 400px;
+    }
 }
