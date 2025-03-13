@@ -26,3 +26,15 @@ volumeSlider.addEventListener('input', () => {
 videoPlayer.addEventListener('ended', () => {
     playButton.textContent = "Play";
 });
+
+// Placeholder API data (replace with your actual API call or local file reading)
+const metadata = {
+    title: "My Awesome Video",
+    description: "This is a description of my awesome video.",
+    timestamp: "2024-07-26T12:00:00Z"
+};
+
+// Display metadata in HTML placeholders
+document.getElementById("videoTitle").textContent = metadata.title;
+document.getElementById("videoDescription").textContent = metadata.description;
+document.getElementById("videoTimestamp").textContent = metadata.timestamp;
